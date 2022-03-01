@@ -62,7 +62,7 @@ class IconSelector extends StatelessWidget {
               print("Icon change not supported");
             }
           } catch (e) {
-            print("Failed to change app icon");
+            print(e);
           }
         },
       ),
