@@ -54,11 +54,13 @@ class IconSelector extends StatelessWidget {
         ),
         onTap: () async {
           try {
-            // if (await FlutterDynamicIcon.supportsAlternateIcons) {
+            if (await FlutterDynamicIcon.supportsAlternateIcons) {
               await FlutterDynamicIcon.setAlternateIconName(appIcon);
               print("App icon change successful");
               return;
-            // }
+            } else {
+              print("Icon change not supported");
+            }
           } catch (e) {
             print("Failed to change app icon");
           }
